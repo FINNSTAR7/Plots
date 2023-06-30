@@ -127,10 +127,10 @@ def eximus_shield(bl):
     def f(x):
         x -= bl
         y = normal_shield(0)(x)  # x <= 25
-        y[25 < x] = (1.0 + 0.0325 * (x[25 < x] - 25)) * normal_shield(0)(x[25 < x])
-        y[35 < x] = (1.325 + 0.065 * (x[35 < x] - 35)) * normal_shield(0)(x[35 < x])
-        y[50 < x] = (2.3 + 0.013 * (x[50 < x] - 50)) * normal_shield(0)(x[50 < x])
-        y[100 < x] = 2.95 * normal_shield(0)(x[100 < x])
+        y[25 < x] = (1.0 + 0.05 * (x[25 < x] - 25)) * normal_shield(0)(x[25 < x])
+        y[35 < x] = (1.5 + 0.1 * (x[35 < x] - 35)) * normal_shield(0)(x[35 < x])
+        y[50 < x] = (3 + 0.02 * (x[50 < x] - 50)) * normal_shield(0)(x[50 < x])
+        y[100 < x] = 4 * normal_shield(0)(x[100 < x])
         x += bl
         return y
 
